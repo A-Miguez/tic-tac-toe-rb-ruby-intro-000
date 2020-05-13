@@ -29,7 +29,6 @@ end
 
 def move(board, index, character)
   board[index] = character
-  return board
 end
 
 
@@ -47,8 +46,6 @@ end
 def valid_move?(board,index)
   if index.between?(0,8) && !position_taken?(board,index)
     return true
-  else
-    return false
   end
 end
 
@@ -117,23 +114,26 @@ end
 def draw?(board)
   if !won?(board) && full?(board)
     true
+  end
 end
 
 
 def over?(board)
   if won?(board) || full?(board) || draw?(board)
     true
+  end
 end
 
 
 def winner(board)
   if win_combo = won?(board)
     board[win_combo.first]
+  end
 end
 
 
 def play(board)
-  until over?(board) do
+  until over?(board)
     turn(board)
   end
   if won?(board)
