@@ -55,7 +55,7 @@ def turn(board)
   num = gets.to_i
   index = input_to_index(num)
   if valid_move?(board,index)
-    move(board,index,character)
+    move(board, index, character)
     display_board(board)
   else
     until valid_move?(board,index)
